@@ -334,4 +334,7 @@ def run():
                         clearScreen()
                         exit()
                 message = submit(text)
+
+if __name__ == "__main__":
+    run()
 run()
