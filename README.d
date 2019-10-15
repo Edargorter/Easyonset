@@ -14,12 +14,13 @@ Usage:
 
 0) Run with: easy
 
-1) -> Type something here to say 
+1) -> Type something here to say.
 2) <Enter>
 
 ... speaks ...
 
-3) Type "." followed by a numeral for verbalisation of number
-	e.g. ". 123" will verbalised the number 123, rather than throw Menu number out-of-range error
+3) Type "." followed by a numeral for verbalisation of number.
+	e.g. ". 123" will verbalised the number 123, rather than throw Menu number out-of-range error.
 
-4) Use a terminal editor to write the message 
+4) Use a terminal editor to write the message. 
+5) Choose from / add to topical phrases.
