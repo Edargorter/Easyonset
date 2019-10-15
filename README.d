@@ -12,12 +12,14 @@ Eeeeeee  A   a   SssssS    Y    Ooooo  N   nn  SssssS  Eeeeee     T
 
 Usage:
 
-0) -> Type something here to say 
-1) <Enter>
+0) Run with: easy
+
+1) -> Type something here to say 
+2) <Enter>
 
 ... speaks ...
 
-2) Type "." followed by a numeral for verbalisation of number
+3) Type "." followed by a numeral for verbalisation of number
 	e.g. ". 123" will verbalised the number 123, rather than throw Menu number out-of-range error
 
-3) Use a terminal editor to write the message 
+4) Use a terminal editor to write the message 
