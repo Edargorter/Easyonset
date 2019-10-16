@@ -1,11 +1,8 @@
-Eeeeeee
-E         Aaa    Ssssss  Y   y  Ooooo  Nn   n  Ssssss  Eeeeee  TTTTTTT
-Eeeeeee  A   a  S        Y   y O     o N n  n S        E          T 
-E        Aaaaa   Ssssss   Y y  O     o N  n n  Ssssss  Eeeeee     T
-E        A   a         s   y   O     o N  n n        s E          T
-Eeeeeee  A   a   SssssS    Y    Ooooo  N   nn  SssssS  Eeeeee     T
+EASYONSET ™
 
-Zachary Bowditch (Edargorter) ™ 2017
+Zachary Bowditch (Edargorter) 2017
+
+![alt text](.easy.png)
 
 0) Navigate to Easyonset folder
 1) run install.sh
@@ -27,4 +24,3 @@ Usage:
 4) Use a terminal editor to write the message. 
 5) Choose from / add to topical phrases.
 
-![alt text](.easy.png)
