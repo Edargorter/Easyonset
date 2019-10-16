@@ -26,3 +26,5 @@ Usage:
 
 4) Use a terminal editor to write the message. 
 5) Choose from / add to topical phrases.
+
+![alt text](.easy.png)
