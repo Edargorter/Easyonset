@@ -214,7 +214,7 @@ def submit(s):
         global about
         global reset_text
         s = s.lower()
-        s = re.sub('[^A-Za-z0-9 ]+', '', s)
+        s = re.sub('[^A-Za-z0-9 .]+', '', s)
         if s == "n":
                 voice("No")
         elif s == "y":
