@@ -13,6 +13,7 @@ import random
 from _thread import *
 
 # TODO create alternative link/symlink to fix directory issues 
+os.chdir(os.getenv("HOME"))
 path = os.getenv("HOME") + "/Easyonset"
 
 os_name = platform.system()
