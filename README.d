@@ -5,6 +5,8 @@ E        Aaaaa   Ssssss   Y y  O     o N  n n  Ssssss  Eeeeee     T
 E        A   a         s   y   O     o N  n n        s E          T
 Eeeeeee  A   a   SssssS    Y    Ooooo  N   nn  SssssS  Eeeeee     T
 
+Zachary Bowditch (Edargorter) ™ 2017
+
 0) Move "Easyonset" folder to Home directory 
 1) run install.sh
 2) Fix errors on your part.
