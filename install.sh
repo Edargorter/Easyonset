@@ -20,8 +20,12 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 	brew install python3
 fi
 
-echo "Generating symlink..."
-sudo ln -sf $(pwd)/easyonset.py /usr/local/bin/easy
-sudo chmod 775 easyonset.py
-
-echo "Installation complete. Speak easy."
+if [ $(ls -a | grep .happy) == ".happy" ]; then
+	sudo chmod 775 easyonset.py
+	echo "Generating symlink..."
+	sudo ln -sf $HOME/Easyonset/easyonset.py /usr/local/bin/easy
+	mv ../Easyonset $HOME
+	echo "Installation complete. Speak easy."
+else
+	echo "Please navigated to the Easyonset folder and restart installation.."
+fi
