@@ -27,5 +27,5 @@ if [ $(ls -a | grep .happy) == ".happy" ]; then
 	mv ../Easyonset $HOME
 	echo "Installation complete. Speak easy."
 else
-	echo "Please navigated to the Easyonset folder and restart installation.."
+	echo "Please navigate to the Easyonset folder and restart installation.."
 fi
