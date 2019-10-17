@@ -28,8 +28,12 @@ global topics
 global topic_dictionary
 global title
 global about
+global editors 
+global editor
 
 options = ["Salutations", "Goodbyes", "Responses", "Statements", "Questions", "Topics"]
+editors = ["vim", "nano", "emacs"]
+editor = 0
 dictionary = []
 topics = []
 topic_dictionary = []
@@ -42,7 +46,7 @@ reset_text = "Reloading data..."
 def newline(n=1):
         print("\n"*n)
 
-def clearScreen():
+def cls():
         print("\033[H\033[J")
 
 def process_sound(speech):
@@ -60,7 +64,9 @@ def displayOptions():
                 print(str(i + 1) + ")  " + options[i])
                 i += 1
         i += 1
-        print("%d)  Enter VIM" % i)
+        print("{})  Use editor [{}]".format(i, editors[editor]))
+        i += 1
+        print("%d)  Change editor" % i)
         i += 1
         newline()
         print("To verbalise a number: enter '.' and then the number.")
@@ -68,8 +74,9 @@ def displayOptions():
         newline()
         print("y = 'yes' n = 'no'")
 
-def dislaySettings():
-        clearScreen()
+def displayList(options):
+        for i in range(len(options)):
+                print("{}) {}".format(i, options[i]))
 
 def displayTitle():
         limit = len(title)
@@ -105,7 +112,7 @@ def addPhrase(phrase, topicnum):
         phrase_file.close()
 
 def displayAddPhraseOptions(topicnum):
-        clearScreen()
+        cls()
         new_phrase = input("Enter in a new phrase: ")
         resp = input("Are you sure? (y/n) ")
         if resp.lower() == 'y':
@@ -116,7 +123,7 @@ def displayPhrases(topicnum):
         message = ""
         global topic_dictionary
         while True:
-                clearScreen()           
+                cls()           
                 limit = len(topic_dictionary[topicnum])
                 print("0)  Back")
                 print("1)  Add Phrase")
@@ -145,7 +152,7 @@ def displayItems(n):
         global dictionary
         message = ""
         while True:
-                clearScreen()
+                cls()
                 limit = len(dictionary[n])
                 print("0)  Back")
                 for i in range(limit):
@@ -163,12 +170,11 @@ def displayItems(n):
                                 message = "Integer out of range."
                         else:
                                 voice(dictionary[n][num - 1])
-                                return
                 except ValueError:
                         message = "Invalid input. Please enter in an integer."
 
 def displayAddOptions():
-        clearScreen()
+        cls()
         new_topic = input("Enter in new topic: ")
         resp = input("Are you sure? (y/n) ")
         if resp.lower() == "y":
@@ -179,7 +185,7 @@ def displayTopics():
         message = ""
         while True:
                 limit = len(topics)
-                clearScreen()
+                cls()
                 print("0)  Back")
                 print("1)  Add Topic")
                 for i in range(limit):
@@ -201,14 +207,31 @@ def displayTopics():
                 except ValueError:
                         message = "Invalid input. Please enter in an integer."
 
-def use_vim():
+def use_editor():
         resp_tmp = "resp_tmp.txt"
         os.system("echo '' > %s" % resp_tmp)
-        os.system("vi %s" % resp_tmp)
+        os.system("{} {}".format(editors[editor], resp_tmp))
         f = open(resp_tmp)
         lines = f.readlines()
         resp = '\t'.join([line.strip() for line in lines])
         submit(resp)
+
+def change_editor():
+        cls()
+        displayList(editors)
+        newline(2)
+        text = input()
+        message = ""
+        try:
+                num = int(text)
+                if num >= 0 and num < len(editors):
+                        global editor
+                        editor = num
+                else:
+                        message = "Integer out of range."
+        except ValueError:
+                    message = "Invalid input. Please enter in an integer."
+        return message
 
 def submit(s):
         global about
@@ -237,7 +260,10 @@ def submit(s):
                         elif num == 6:
                                 displayTopics()
                         elif num == 7:
-                                use_vim()
+                                use_editor()
+                        elif num == 8:
+                                message = change_editor()
+                                return message
                         else:
                                 return "Number out of range."
                 except ValueError:
@@ -321,7 +347,7 @@ def run():
         readTitle()
         voice(dictionary[0][random.randint(1, len(dictionary[0]) - 1)])
         while True:
-                clearScreen()
+                cls()
                 displayTitle()
                 newline(2)
                 displayOptions()
@@ -332,7 +358,7 @@ def run():
                 text = input()
                 if text == "0":
                         voice(dictionary[1][random.randint(1, len(dictionary[1]) - 1)])
-                        clearScreen()
+                        cls()
                         exit()
                 message = submit(text)
 
