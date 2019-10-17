@@ -249,8 +249,6 @@ def submit(s):
         elif s == "reset":
                 voice(reset_text)
                 reset() 
-        elif s == 'vi' or s == 'vim':
-                use_vim()
         else:
                 try:
                         num = int(s)
