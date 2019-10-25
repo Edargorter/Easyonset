@@ -22,10 +22,10 @@ fi
 
 if [ $(ls -a | grep .happy) == ".happy" ]; then
 	sudo chmod 775 easyonset.py
-	echo "Generating symlink..."
+	echo "[Easy] Generating symlink..."
 	sudo ln -sf $HOME/Easyonset/easyonset.py /usr/local/bin/easy
 	mv ../Easyonset $HOME
-	echo "Installation complete. Speak easy."
+	echo "[Easy] Installation complete. Speak easy."
 else
-	echo "Please navigate to the Easyonset folder and restart installation.."
+	echo "[Easy] Please navigate to the Easyonset folder and restart installation.."
 fi
