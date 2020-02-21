@@ -9,7 +9,7 @@ echo ""
 if [[ "$(uname)" == 'Linux' ]]; then
 	if [ $(which apt) ]; then
 		echo "[Easy] Installing system requirements..."
-		sudo apt install python3 espeak
+		sudo apt install python3 espeak -y
 	fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 	if [ ! $(which brew) ]; then
